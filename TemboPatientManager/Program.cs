@@ -7,16 +7,19 @@ namespace RefactoredTemboDatabaseManager
     {
         static void Main(string[] args)
         {
-            const string CONNECTION_STRING = @"
-            Host=hectically-premier-rabbitfish.data-1.euc1.tembo.io;
-            Port=5432;
-            Username=postgres;
-            Password=kOdih6a2z8YWBRKr;
-            Database=postgres";
+
+            //const string CONNECTION_STRING = @"Host=hectically-premier-rabbitfish.data-1.euc1.tembo.io;/Port=5432;Username=postgres;Password=kOdih6a2z8YWBRKr;Database=postgres";
+
+            string CONNECTION_STRING;
+
+            Console.WriteLine("Enter your PostgreSQL connection string: ");
+            CONNECTION_STRING = Console.ReadLine();
 
 
-            Console.Write("PostgreSQL connection string: ");
-            Console.WriteLine(CONNECTION_STRING);
+
+
+            //Console.Write("PostgreSQL connection string: ");
+            //Console.WriteLine(CONNECTION_STRING);
 
             using (var conn = ConnectToDatabase(CONNECTION_STRING))
             {
